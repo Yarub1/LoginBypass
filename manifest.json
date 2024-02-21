@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Skip Account Creation",
+  "version": "1.0",
+  "description": "Skip account creation requests on specific sites",
+  "permissions": ["activeTab", "storage"],
+  "icons": {
+    "48": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "48": "icon.png"
+    },
+    "default_title": "Skip Account Creation"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
